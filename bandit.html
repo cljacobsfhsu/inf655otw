@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Bandit Game</title>
+
+    </head>
+
+    <style>
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+    </style>
+
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h2 id="bandit">Bandit</h2>
+            <div id="sshinfo">
+                    <p><b>SSH Information:</b><br>
+                    Host: bandit.labs.overthewire.org<br>
+                    Port: 2220</p>
+            </div>
+            <div class="col-12">
+                <p>The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. 
+                        <b>If you notice something essential is missing or have ideas for new levels, please let us know!</b></p></div>
+              
+            <ul class="nav nav-tabs col-2 float-left" style="display: block">
+                <li class="nav-item"><a data-toggle="tab" href="#gamestart"  class="nav-link active">Bandit Instructions</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game0"  class="nav-link">Bandit Level 0</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game1"  class="nav-link">Bandit Level 1</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game2"  class="nav-link">Bandit Level 2</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game3"  class="nav-link">Bandit Level 3</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game4"  class="nav-link">Bandit Level 4</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game5"  class="nav-link">Bandit Level 5</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game6"  class="nav-link">Bandit Level 6</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game7"  class="nav-link">Bandit Level 7</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game8"  class="nav-link">Bandit Level 8</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game9"  class="nav-link">Bandit Level 9</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game10"  class="nav-link">Bandit Level 10</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game11"  class="nav-link">Bandit Level 11</a></li>
+    
+            </ul>
+              
+            <div class="tab-content col-10 float-right">
+                <div id="gamestart" class="tab-pane fade show active">
+                    <h3>Note for beginners</h3>
+                    <p>This game, like most other games, is organised in levels. You start at Level 0 and try to “beat” or “finish” it. Finishing a level results in information on how to start the next level. 
+                        The pages on this website for “Level X” contain information on how to start level X from the previous level. E.g. The page for Level 1 has information on how to gain access from Level 0 to Level 1. 
+                        All levels in this game have a page on this website, and they are all linked to from the sidemenu on the left of this page.
+                        You will encounter many situations in which you have no idea what you are supposed to do. <b>Don’t panic! Don’t give up!</b>
+                        The purpose of this game is for you to learn the basics. Part of learning the basics, is reading a lot of new information.    
+                        There are several things you can try when you are unsure how to continue:</p>
+                        <p>First, if you know a command, but don’t know how to use it, try the manual (man page) by entering “man 'command'” (without the quotes). e.g. 
+                            if you know about the “ls” command, type: man ls. The “man” command also has a manual, try it. Press q to quit the man command.<br><br>
+                                Second, if there is no man page, the command might be a shell built-in. In that case use the “help X” command. E.g. help cd
+                                Also, your favorite search-engine is your friend. Learn how to use it! I recommend Google.<br><br>
+                                Lastly, if you are still stuck, you can join us on IRC</p><br>
+                    <p>You’re ready to start! Begin with Level 0, linked at the left of this page. Good luck!<br><br>
+                            <b>Note for VMs</b>: You may fail to connect to overthewire.org via SSH with a “broken pipe error” when the network adapter for the VM is 
+                            configured to use NAT mode. Adding the setting IPQoS throughput to /etc/ssh/ssh_config should resolve the issue. 
+                            If this does not solve your issue, the only option then is to change the adapter to Bridged mode.</p>
+                </div>
+                <div id="game0" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. 
+                        The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ssh</p>
+                    <h3>Helpful Reading Material</h3>
+                    <a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank">Secure Shell (SSH) on Wikipedia</a><br>
+                    <a href="https://www.wikihow.com/Use-SSH" target="_blank">How to use SSH on wikiHow</a>
+                </div>
+                <div id="game1" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. 
+                        Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find</p>
+                </div>
+                <div id="game2" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in a file called - located in the home directory</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find</p>
+                    <h3>Helpful Reading Material</h3>
+                    <a href="https://www.google.com/search?q=dashed+filename" target="_blank">Google Search for “dashed filename”</a><br>
+                    <a href="http://tldp.org/LDP/abs/html/special-chars.html" target="_blank">Advanced Bash-scripting Guide - Chapter 3 - Special Characters</a>
+                </div>
+                <div id="game3" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in a file called spaces in this filename located in the home directory</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find</p>
+                    <h3>Helpful Reading Material</h3>
+                    <a href="https://www.google.com/search?q=spaces+in+filename" target="_blank">Google Search for “spaces in filename”</a><br>
+                </div>
+                <div id="game4" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in a hidden file in the inhere directory.</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find</p>
+                </div>
+                <div id="game5" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find</p>
+                </div>
+                <div id="game6" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in a file 
+                        somewhere under the inhere directory and has all of the following properties:
+                        <ul style="list-style-type: none;">
+                            <li>human-readable</li>
+                            <li>1033 bytes in size</li>
+                            <li>not executable</li>
+                        </ul></p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find</p>
+                </div>
+                <div id="game7" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored somewhere on the server and has all of the following properties:
+                        <ul style="list-style-type: none;">
+                            <li>owned by user bandit7</li>
+                            <li>owned by group bandit6</li>
+                            <li>33 bytes in size</li>
+                        </ul>
+                    </p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>ls, cd, cat, file, du, find, grep</p>
+                </div>
+                <div id="game8" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in the file data.txt next to the word millionth</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd</p>
+                </div>
+                <div id="game9" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in the file data.txt and is the only line of text that occurs only once</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd</p>
+                    <h3>Helpful Reading Material</h3>
+                    <a href="http://www.westwind.com/reference/os-x/commandline/pipes.html" target="_blank">The unix commandline: pipes and redirects</a><br>
+                </div>
+                <div id="game10" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in the file data.txt in one of the few human-readable strings, beginning with several ‘=’ characters.</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd</p>
+                </div>
+                <div id="game11" class="tab-pane fade">
+                    <h3>Level Goal</h3>
+                    <p>The password for the next level is stored in the file data.txt, which contains base64 encoded data</p>
+                    <h3>Commands you may need to solve this level</h3>
+                    <p>grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd</p>
+                    <h3>Helpful Reading Material</h3>
+                    <a href="https://en.wikipedia.org/wiki/Base64" target="_blank">Base64 on Wikipedia</a><br>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+    
+
+</body>
+</html>

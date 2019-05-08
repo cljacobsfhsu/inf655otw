@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Warzone</title>
+
+    </head>
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h1>Warzone</h1>
+
+            <p>The warzone is an isolated network simulating the entire IPv4 Internet, 
+                on which all connected devices are targets to be hacked. Unlike other wargames, 
+                the warzone allows players to connect their own hackable servers or devices with any software they like, 
+                as long as it speaks IP.
+            </p>
+            <br>
+
+            <div class="col-2 float-left">
+                <h3>Warzone Games</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="tsutomu.html">Tsutomu</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-10 float-right" style="border-left: 1px solid #cccccc; padding-bottom: 1%;">
+                <h2>About</h2>
+                <p>The warzone setup gives us the ability to create wargames that are far more interesting than the ones currently online, 
+                    such as a games based on Windows/Android/, kernel exploitation, advanced network exploitation, etc.</p>
+                <h2>How to Connect</h2>
+                <p>To get access to the warzone, join the #warzone channel on ircs.overthewire.org (SSL) and request access.<br>
+                    You will receive an OpenVPN config file containing all the information you need to connect to the warzone. On a Linux commandline, you can run the following command as root to connect to the warzone (assuming you named the received file “myconfig.ovpn”):<br>
+                    <br><b>openvpn myconfig.ovpn</b><br><br>
+                    Of course, in order to use OpenVPN on your computer, you will need to install it first. Use Google to figure out how to install OpenVPN on your Operating System.</p>
+                <h2 class="text-danger">Warning About Insecure Networks</h2>
+                <p class="text-info">The warzone is an experimental network without any protection. Your computer will be exposed to attacks, but not more than on any free wifi accesspoint you connect to. 
+                    Still, it's always a good idea to use adequate protection 
+                    (e.g. have a firewall and/or use a virtual machine to connect to the warzone).</p>
+                <h3>Note about manual account creation*</h3>
+                <p>In the future this will be an automated process, but since we are still developing, we are creating the credentials manually.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title></title>
+
+    </head>
+
+<body>
+    <div id="wrapper" class="container">
+        <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+        </nav>
+
+
+    <header include-html="templates/header.html" class="row">
+
+    </header>
+
+    <main id="content">
+
+        <div>
+            <div class="row container">
+                <h2>Wargames</h2>
+                <p>
+                The wargames offered by the OverTheWire community can help you to learn and practice security concepts in the form of fun-filled games.
+                To find out more about a certain wargame, just visit its page linked from the menu on the left.
+
+                If you have a problem, a question or a suggestion, you can <a href="irc.html">join us on IRC</a>.</p>
+            </div>
+            <div class="row container">
+                <h2>Warzone</h2>
+                <p>
+                The warzone is a place to compete against other and hack realworld devices and test your skills in a virtualized network enviroment. Be warned, without proper security practices you are
+                opening yourself up to real people. While you are no more vulnerable than you would be on a public network such as an airport or coffeehouse, games like
+                this attract people who make a living pwning other users. Always use a VM when connecting to a network like this.
+                </p>
+            </div>
+            <div class="row container">
+                <h2>Resources</h2>
+                <p>
+                Before you head to the store to buy fingerless gloves and an anonymous mask, stop by the resources page to learn about the tools that will help you along
+                your path to becoming a cyber security expert. These are tools that will be used throughout the wargames and are required to compete seriously in the warzone.
+
+                If you aren't already familiar with basic networking concepts such as IP addressing, subnetting, common services and ports, and remote access take some time to read up 
+                on these topics as you delve into the recommended toolkit here.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+    authDomain: "inf655-94bb8.firebaseapp.com",
+    databaseURL: "https://inf655-94bb8.firebaseio.com",
+    projectId: "inf655-94bb8",
+    storageBucket: "inf655-94bb8.appspot.com",
+    messagingSenderId: "262963091303"
+  };
+  firebase.initializeApp(config);
+
+  var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+</script>
+<script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+
+</body>
+</html>

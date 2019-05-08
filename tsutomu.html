@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Tsutomu</title>
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h1>Tsutomu</h1>
+
+            <p>Tsutomu is a machine in the warzone that replicates the network and computer setup of Tsutomu Shimomura, 
+                who got hacked by Kevin Mitnick on December 25th 1994.Kevin Mitnick used a TCP sequence prediction attack, 
+                known to exist since at least the mid-1980s, to fake a legitimate connection to Tsutomu Shimomura’s RSH server.
+            </p>
+            <br>
+
+            <div class="col-12 float-left">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Tcp-handshake.svg"><br><br>
+                <p>In TCP sequence prediction attacks, an attacker impersonates a Client and completes a TCP handshake between that Client and a Server, 
+                    without ever receiving any packets that the Server sends back to the Client. In order to do so, the attacker 
+                    must correctly guess the initial sequence number (ISN) sent from the Server to the Client. The kernel on Tsutomu Shimomura’s 
+                    machine generated easily predictable ISNs, making the attack possible. The attack is featured in the movie Takedown, 
+                    but it’s not a very good source of information on the technical aspects of the attack itself. Easily predictable TCP initial 
+                    sequence numbers became extinct in 1996 with the introduction of RFC 1984. The tsutomu machine inside the warzone reintroduces 
+                    easily predictable ISNs so that you can try out this attack for yourself and test your skills.</p>
+                <h2>How To Play</h2>
+                <p>This challenge is part of the OverTheWire Advent Bonanza 2018 CTF, which is now hosted on the warzone too. 
+                    After connecting to the warzone, tsutomu can be found at http://172.30.30.30. To avoid interfering with others working 
+                    on tsutomu, you may find it helpful to coordinate in the #warzone channel on our IRC server.</p>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+
+</body>
+</html>

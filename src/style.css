@@ -1,0 +1,167 @@
+body {
+    background-image: url('background.jpg'); /*Photo by Daniel Chen*/
+    background-position: center;
+    background-size: cover;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#wrapper.container {
+    max-width: 100%!important;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 5px 1px #555555;
+    background-color: #ffffff;
+    height: 100%;
+    margin-top: 0;
+    overflow: auto;
+}
+
+
+nav {
+    background-color: rgb(75, 100, 220, .7);
+    transition: background-color .5s ease;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    width: 90%;
+}
+
+.navbar {
+    padding: 0!important;
+}
+
+nav li{
+    padding: .5rem 1rem;
+    background-color: rgba(118, 141, 255, 0.0);
+    transition: background-color .5s ease-out;
+}
+
+nav li:hover {
+    background-color: rgba(118, 141, 255, 0.7);
+}
+
+nav a {
+    color: #67b6ff;
+    padding: .5rem 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+nav a:hover {
+    color: #26008d;
+}
+
+#nav-image.col-2 {
+    padding-left: 0;
+}
+
+.fixed-top {
+    right: auto!important;
+    left: auto!important;
+}
+
+.fixed-top.scrolled {
+    background-color: rgb(75, 100, 220, 1)!important;
+    transition: background-color 200ms linear;
+  }
+
+
+
+.second-nav {
+    background-color: #6f6f6f;
+}
+
+#column-1 ul {
+    list-style-type: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+}
+
+#column-1 ul a {
+    color: #6fcf6f;
+}
+
+#column-1 ul a:hover {
+    color: #5f9f6f;
+}
+
+#column-1 ul li:hover {
+    background-color: #3f3f3f;
+}
+
+footer {
+    padding: 4% 4% 0 4%;
+    display: inline-block;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    background-image: url('wires.jpg'); /*Photo by Daniel Falcao*/
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 2%;
+}
+
+header img{
+    width: 55%;
+    height: auto;
+}
+
+#content {
+    padding: 1%;
+}
+
+#sshinfo {
+    background-color: #aaaaaa;
+    color: #26008d;
+    font-family: Helvetica, sans-serif;
+    font-size: .75em;
+    padding: .5%;
+    width: 12rem;
+    float: right;
+    display: table;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #000000
+}
+
+#bandit {
+    display: inline-table;
+    font-size: 5em;
+    color: red;
+    font-family: inherit;
+    font-style: oblique;
+}
+
+#natas {
+    display: inline-table;
+    font-size: 5em;
+    color: #15cd;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+
+#leviathan {
+    display: inline-table;
+    font-size: 5em;
+    color: rgba(23, 230, 126, 0.867);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+#krypton {
+    display: inline-table;
+    font-size: 5em;
+    color: #e42121;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    text-shadow: 3px 1px 5px #ff5507;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Leviathan Game</title>
+
+    </head>
+
+    <style>
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+    </style>
+
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h2 id="leviathan">Leviathan</h2>
+            <div id="sshinfo">
+                    <p><b>SSH Information:</b><br>
+                    Host: leviathan.labs.overthewire.org<br>
+                    Port: 2223</p>
+            </div>
+            
+            <div class="col-12">
+                <p class="text-info">Dare you face the lord of the oceans?
+                        </p></div>
+              
+            <ul class="nav nav-tabs col-2 float-left" style="display: block">
+                <li class="nav-item"><a data-toggle="tab" href="#gamestart"  class="nav-link active">Leviathan Instructions</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game0"  class="nav-link">Leviathan Level 0</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game1"  class="nav-link">Leviathan Level 1</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game2"  class="nav-link">Leviathan Level 2</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game3"  class="nav-link">Leviathan Level 3</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game4"  class="nav-link">Leviathan Level 4</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game5"  class="nav-link">Leviathan Level 5</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game6"  class="nav-link">Leviathan Level 6</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game7"  class="nav-link">Leviathan Level 7</a></li>
+            </ul>
+              
+            <div class="tab-content col-10 float-right">
+                <div id="gamestart" class="tab-pane fade show active">
+                    <h3>Playing the Game</h3>
+                    <p>Leviathan is a wargame that has been rescued from the demise of <b>intruded.net</b>, previously hosted on leviathan.intruded.net. <span class="text-info">Big thanks to adc, morla and reth</span> for their help in resurrecting this game!</p>
+                        <p>What follows below is the original description of leviathan, copied from intruded.net:</p>
+                    <p style="font-weight: lighter;">
+                            Summary:<br>
+                            Difficulty: 1/10<br>
+                            Levels: 8<br>
+                            Platform: Linux/x86<br><br>
+                            
+                            Author: Anders Tonfeldt<br><br>
+                            
+                            Special Thanks:<br>
+                            We would like to thank AstroMonk for coming up with a replacement idea for the last level,
+                            deadfood for finding a leveljump and Coi for finding a non-planned vulnerability.<br><br>
+                            
+                            Description:<br>
+                            This wargame doesn't require any knowledge about programming - just a bit of common
+                            sense and some knowledge about basic *nix commands. We had no idea that it'd be this
+                            hard to make an interesting wargame that wouldn't require programming abilities from 
+                            the players. Hopefully we made an interesting challenge for the new ones.
+                    </p> 
+                    <p>Leviathan’s levels are called leviathan0, leviathan1, … etc. and can be accessed on <b>leviathan.labs.overthewire.org</b> through SSH on port 2223.<br><br>
+                        To login to the first level use:<br><br>
+                        Username: leviathan0<br>
+                        Password: leviathan0<br><br>
+
+                        Data for the levels can be found in the homedirectories. You can look at /etc/leviathan_pass for the various level passwords.
+                    </p>
+                </div>
+                <div id="game0" class="tab-pane fade">
+                    <h3>Level 0</h3>
+                    <p>
+                        There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game1" class="tab-pane fade">
+                    <h3>Level 1</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game2" class="tab-pane fade">
+                    <h3>Level 2</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game3" class="tab-pane fade">
+                    <h3>Level 3</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game4" class="tab-pane fade">
+                    <h3>Level 4</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game5" class="tab-pane fade">
+                    <h3>Level 5</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game6" class="tab-pane fade">
+                    <h3>Level 6</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game7" class="tab-pane fade">
+                    <h3>Level 7</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+    
+
+</body>
+</html>

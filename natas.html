@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Natas Game</title>
+
+    </head>
+
+    <style>
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+    </style>
+
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h2 id="natas">Natas</h2>
+            
+            <div class="col-12">
+                <p>Natas teaches the basics of serverside web-security.
+                        <b>If you notice something essential is missing or have ideas for new levels, please let us know!</b></p></div>
+              
+            <ul class="nav nav-tabs col-2 float-left" style="display: block">
+                <li class="nav-item"><a data-toggle="tab" href="#gamestart"  class="nav-link active">Natas Instructions</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game0"  class="nav-link">Natas Level 0</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game1"  class="nav-link">Natas Level 1</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game2"  class="nav-link">Natas Level 2</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game3"  class="nav-link">Natas Level 3</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game4"  class="nav-link">Natas Level 4</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game5"  class="nav-link">Natas Level 5</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game6"  class="nav-link">Natas Level 6</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game7"  class="nav-link">Natas Level 7</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game8"  class="nav-link">Natas Level 8</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game9"  class="nav-link">Natas Level 9</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game10"  class="nav-link">Natas Level 10</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game11"  class="nav-link">Natas Level 11</a></li>
+    
+            </ul>
+              
+            <div class="tab-content col-10 float-right">
+                <div id="gamestart" class="tab-pane fade show active">
+                    <h3>Playing the Game</h3>
+                    <p>Each level of natas consists of its own website located at <b>http://natasX.natas.labs.overthewire.org</b>, where X is the level number. <b>There is no SSH login.</b> To access a level, enter the username for that level (e.g. natas0 for level 0) and its password.</p>
+                        <p>Each level has access to the password of the next level. Your job is to somehow obtain that next password and level up. 
+                            <b>All passwords are also stored in /etc/natas_webpass/.</b> E.g. the password for natas5 is stored in the file /etc/natas_webpass/natas5 and only readable by natas4 and natas5.</p><br>
+                    <p>
+                        Start Here: <br><br>
+                        Username: natas0<br>
+                        Password: natas0<br>
+                        URL: <a href="http://natas0.natas.labs.overthewire.org" target="_blank">http://natas0.natas.labs.overthewire.org</a>
+                    </p> 
+                    <p>Developed in association with
+                            the <a href="http://www.nessos-project.eu/" target="_blank">NESSoS FP7</a> project</p>
+                </div>
+                <div id="game0" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas0<br>
+                        URL: <a href="http://natas0.natas.labs.overthewire.org" target="_blank">http://natas0.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game1" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas1<br>
+                        URL: <a href="http://natas1.natas.labs.overthewire.org" target="_blank">http://natas1.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game2" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas2<br>
+                        URL: <a href="http://natas2.natas.labs.overthewire.org" target="_blank">http://natas2.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game3" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas3<br>
+                        URL: <a href="http://natas3.natas.labs.overthewire.org" target="_blank">http://natas3.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game4" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas4<br>
+                        URL: <a href="http://natas4.natas.labs.overthewire.org" target="_blank">http://natas4.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game5" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas5<br>
+                        URL: <a href="http://natas5.natas.labs.overthewire.org" target="_blank">http://natas5.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game6" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas6<br>
+                        URL: <a href="http://natas6.natas.labs.overthewire.org" target="_blank">http://natas6.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game7" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas7<br>
+                        URL: <a href="http://natas7.natas.labs.overthewire.org" target="_blank">http://natas7.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game8" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas8<br>
+                        URL: <a href="http://natas8.natas.labs.overthewire.org" target="_blank">http://natas8.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game9" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas9<br>
+                        URL: <a href="http://natas9.natas.labs.overthewire.org" target="_blank">http://natas9.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game10" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas10<br>
+                        URL: <a href="http://natas10.natas.labs.overthewire.org" target="_blank">http://natas10.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+                <div id="game11" class="tab-pane fade">
+                    <h3>Level Login</h3>
+                    <p>
+                        Username: natas11<br>
+                        URL: <a href="http://natas11.natas.labs.overthewire.org" target="_blank">http://natas11.natas.labs.overthewire.org</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+    
+
+</body>
+</html>

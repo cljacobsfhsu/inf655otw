@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Krypton Game</title>
+
+    </head>
+
+    <style>
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+    </style>
+
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h2 id="krypton">Krypton</h2>
+            <div id="sshinfo">
+                    <p><b>SSH Information:</b><br>
+                    Host: krypton.labs.overthewire.org<br>
+                    Port: 2222</p>
+            </div>
+            
+            <div class="col-12">
+                <p>The Krypton wargame. Nuff' said.
+                        </p></div>
+              
+            <ul class="nav nav-tabs col-2 float-left" style="display: block">
+                <li class="nav-item"><a data-toggle="tab" href="#gamestart"  class="nav-link active">Krypton Instructions</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game0"  class="nav-link">Krypton Level 0</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game1"  class="nav-link">Krypton Level 1</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game2"  class="nav-link">Krypton Level 2</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game3"  class="nav-link">Krypton Level 3</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game4"  class="nav-link">Krypton Level 4</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game5"  class="nav-link">Krypton Level 5</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game6"  class="nav-link">Krypton Level 6</a></li>
+            </ul>
+              
+            <div class="tab-content col-10 float-right">
+                <div id="gamestart" class="tab-pane fade show active">
+                    <h3>Playing the Game</h3>
+                    <p>Encoding and cryptography abound within. Use ssh to play the game! Go to host <b>krypton.labs.overthewire.org</b> and use <b>port 2222</b></p>
+                </div>
+                <div id="game0" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            Welcome to Krypton! The first level is easy. The following string encodes the password using Base64:<br><br>
+
+                            <span style="font-weight: lighter;">S1JZUFRPTklTR1JFQVQ=</span><br><br>
+
+                            Use this password to log in to krypton.labs.overthewire.org with username krypton1 using SSH on port 2222. You can find the files for other levels in /krypton/
+                    </p>
+                </div>
+                <div id="game1" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            The password for level 2 is in the file ‘krypton2’. It is ‘encrypted’ using a simple rotation. 
+                            It is also in non-standard ciphertext format. When using alpha characters for cipher text it is normal to group 
+                            the letters into 5 letter clusters, regardless of word boundaries. This helps obfuscate any patterns. 
+                            This file has kept the plain text word boundaries and carried them to the cipher text. Enjoy!
+                    </p>
+                </div>
+                <div id="game2" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            ROT13 is a simple substitution cipher.<br><br>
+
+                            Substitution ciphers are a simple replacement algorithm. In this example of a substitution cipher, we will explore a ‘monoalphebetic’ cipher. Monoalphebetic means, literally, “one alphabet” and you will see why.<br><br>
+                            
+                            This level contains an old form of cipher called a ‘Caesar Cipher’. A Caesar cipher shifts the alphabet by a set number. For example:<br><br>
+                            
+                            <span style="font-weight: lighter">plain:  a b c d e f g h i j k ...<br>
+                            cipher: G H I J K L M N O P Q ...</span><br><br>
+
+                            In this example, the letter ‘a’ in plaintext is replaced by a ‘G’ in the ciphertext so, for example, the plaintext ‘bad’ becomes ‘HGJ’ in ciphertext.<br><br>
+                            
+                            The password for level 3 is in the file krypton3. It is in 5 letter group ciphertext. It is encrypted with a Caesar Cipher. Without any further information, this cipher text may be difficult to break. You do not have direct access to the key, however you do have access to a program that will encrypt anything you wish to give it using the key. If you think logically, this is completely easy.<br><br>
+                            
+                            One shot can solve it!<br><br>
+                            
+                            Have fun.<br><br>
+                            
+                            Additional Information:<br><br>
+                            
+                            The encrypt binary will look for the keyfile in your current working directory. Therefore, it might be best to create a working direcory in /tmp and in there a link to the keyfile. As the encrypt binary runs setuid krypton3, you also need to give krypton3 access to your working directory.<br><br>
+                            
+                            Here is an example:<br><br>
+                            
+                            <span style="font-weight: lighter">krypton2@melinda:~$ mktemp -d<br>
+                            /tmp/tmp.Wf2OnCpCDQ<br>
+                            krypton2@melinda:~$ cd /tmp/tmp.Wf2OnCpCDQ<br>
+                            krypton2@melinda:/tmp/tmp.Wf2OnCpCDQ$ ln -s /krypton/krypton2/keyfile.dat<br>
+                            krypton2@melinda:/tmp/tmp.Wf2OnCpCDQ$ ls<br>
+                            keyfile.dat<br>
+                            krypton2@melinda:/tmp/tmp.Wf2OnCpCDQ$ chmod 777 .<br>
+                            krypton2@melinda:/tmp/tmp.Wf2OnCpCDQ$ /krypton/krypton2/encrypt /etc/issue<br>
+                            krypton2@melinda:/tmp/tmp.Wf2OnCpCDQ$ ls<br>
+                            ciphertext  keyfile.dat</span>
+                    </p>
+                </div>
+                <div id="game3" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            Well done. You’ve moved past an easy substitution cipher.<br><br>
+
+                            The main weakness of a simple substitution cipher is repeated use of a simple key. In the previous exercise you were able to introduce arbitrary plaintext to expose the key. In this example, the cipher mechanism is not available to you, the attacker.<br><br>
+                            
+                            However, you have been lucky. You have intercepted more than one message. The password to the next level is found in the file ‘krypton4’. You have also found 3 other files. (found1, found2, found3)<br><br>
+                            
+                            You know the following important details:<br><br>
+                            
+                            <span class="text-info">The message plaintexts are in English (*** very important) - They were produced from the same key (*** even better!)</span><br><br>
+                            Enjoy.
+                    </p>
+                </div>
+                <div id="game4" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            Good job!<br><br>
+
+                            You more than likely used some form of FA and some common sense to solve that one.<br><br>
+                            
+                            So far we have worked with simple substitution ciphers. They have also been ‘monoalphabetic’, meaning using a fixed key, and giving a one to one mapping of plaintext (P) to ciphertext (C). Another type of substitution cipher is referred to as ‘polyalphabetic’, where one character of P may map to many, or all, possible ciphertext characters.<br><br>
+                            
+                            An example of a polyalphabetic cipher is called a Vigenère Cipher. It works like this:<br><br>
+                            
+                            If we use the key(K) ‘GOLD’, and P = PROCEED MEETING AS AGREED, then “add” P to K, we get C. When adding, if we exceed 25, then we roll to 0 (modulo 26).<br><br>
+                            
+                            <span style="font-weight: lighter">P P R O C E E D M E E T I N G A S A G R E E D\<br>
+                            K G O L D G O L D G O L D G O L D G O L D G O\</span><br><br>
+                            becomes:<br><br>
+                            
+                            <span style="font-weight: lighter">P 15 17 14 2 4 4 3 12 4 4 19 8 13 6 0 18 0 6 17 4 4 3\<br>
+                            K 6 14 11 3 6 14 11 3 6 14 11 3 6 14 11 3 6 14 11 3 6 14\<br>
+                            C 21 5 25 5 10 18 14 15 10 18 4 11 19 20 11 21 6 20 2 8 10 17\</span><br><br>
+                            So, we get a ciphertext of:<br><br>
+                            
+                            <span style="font-weight: lighter">VFZFK SOPKS ELTUL VGUCH KR</span><br><br>
+                            This level is a Vigenère Cipher. You have intercepted two longer, english language messages. You also have a key piece of information. You know the key length!<br><br>
+                            
+                            For this exercise, the key length is 6. The password to level five is in the usual place, encrypted with the 6 letter key.<br><br>
+                            
+                            Have fun!
+                    </p>
+                </div>
+                <div id="game5" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            FA can break a known key length as well. Lets try one last polyalphabetic cipher, but this time the key length is unknown.<br><br>
+
+                            Enjoy.
+                    </p>
+                </div>
+                <div id="game6" class="tab-pane fade">
+                    <h3>Level Info</h3>
+                    <p>
+                            Hopefully by now its obvious that encryption using repeating keys is a bad idea. Frequency analysis can destroy repeating/fixed key substitution crypto.<br><br>
+
+                            A feature of good crypto is random ciphertext. A good cipher must not reveal any clues about the plaintext. Since natural language plaintext (in this case, English) contains patterns, it is left up to the encryption key or the encryption algorithm to add the ‘randomness’.<br><br>
+                            
+                            Modern ciphers are similar to older plain substitution ciphers, but improve the ‘random’ nature of the key.<br><br>
+                            
+                            An example of an older cipher using a complex, random, large key is a vigniere using a key of the same size of the plaintext. For example, imagine you and your confident have agreed on a key using the book ‘A Tale of Two Cities’ as your key, in 256 byte blocks.<br><br>
+                            
+                            The cipher works as such:<br><br>
+                            
+                            Each plaintext message is broken into 256 byte blocks. For each block of plaintext, a corresponding 256 byte block from the book is used as the key, starting from the first chapter, and progressing. No part of the book is ever re-used as key. The use of a key of the same length as the plaintext, and only using it once is called a “One Time Pad”.<br><br>
+                            
+                            Look in the krypton6 directory. You will find a file called ‘plain1’, a 256 byte block. You will also see a file ‘key1’, the first 256 bytes of ‘A Tale of Two Cities’. The file ‘cipher1’ is the cipher text of plain1. As you can see (and try) it is very difficult to break the cipher without the key knowledge.<br><br>
+                            
+                            If the encryption is truly random letters, and only used once, then it is impossible to break. A truly random “One Time Pad” key cannot be broken. Consider intercepting a ciphertext message of 1000 bytes. One could brute force for the key, but due to the random key nature, you would produce every single valid 1000 letter plaintext as well. Who is to know which is the real plaintext?!?<br><br>
+                            
+                            Choosing keys that are the same size as the plaintext is impractical. Therefore, other methods must be used to obscure ciphertext against frequency analysis in a simple substitution cipher. The impracticality of an ‘infinite’ key means that the randomness, or entropy, of the encryption is introduced via the method.<br><br>
+                            
+                            We have seen the method of ‘substitution’. Even in modern crypto, substitution is a valid technique. Another technique is ‘transposition’, or swapping of bytes.<br><br>
+                            
+                            Modern ciphers break into two types; symmetric and asymmetric.<br><br>
+                            
+                            Symmetric ciphers come in two flavours: block and stream.<br><br>
+                            
+                            Until now, we have been playing with classical ciphers, approximating ‘block’ ciphers. A block cipher is done in fixed size blocks (suprise!). For example, in the previous paragraphs we discussed breaking text and keys into 256 byte blocks, and working on those blocks. Block ciphers use a fixed key to perform substituion and transposition ciphers on each block discretely.<br><br>
+                            
+                            Its time to employ a stream cipher. A stream cipher attempts to create an on-the-fly ‘random’ keystream to encrypt the incoming plaintext one byte at a time. Typically, the ‘random’ key byte is xor’d with the plaintext to produce the ciphertext. If the random keystream can be replicated at the recieving end, then a further xor will produce the plaintext once again.<br><br>
+                            
+                            From this example forward, we will be working with bytes, not ASCII text, so a hex editor/dumper like hexdump is a necessity. Now is the right time to start to learn to use tools like cryptool.<br><br>
+                            
+                            In this example, the keyfile is in your directory, however it is not readable by you. The binary ‘encrypt6’ is also available. It will read the keyfile and encrypt any message you desire, using the key AND a ‘random’ number. You get to perform a ‘known ciphertext’ attack by introducing plaintext of your choice. The challenge here is not simple, but the ‘random’ number generator is weak.<br><br>
+                            
+                            As stated, it is now that we suggest you begin to use public tools, like cryptool, to help in your analysis. You will most likely need a hint to get going. See ‘HINT1’ if you need a kicktstart.<br><br>
+                            
+                            If you have further difficulty, there is a hint in ‘HINT2’.<br><br>
+                            
+                            The password for level 7 (krypton7) is encrypted with ‘encrypt6’.<br><br>
+                            
+                            Good Luck!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+    
+
+</body>
+</html>
