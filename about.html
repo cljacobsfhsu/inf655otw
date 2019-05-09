@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>About OTW</title>
+
+    </head>
+
+    <style>
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+    </style>
+
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h2 id="about">About Over The Wire</h2>
+            
+            <div class="col-12">
+                <p class="text-info"><i>We're hackers, and we are good-looking. We are the 1%.</i>
+
+                        </p></div>
+              
+            <ul class="nav nav-tabs col-2 float-left" style="display: block">
+                <li class="nav-item"><a data-toggle="tab" href="#donate"  class="nav-link active">Donate!</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#contact"  class="nav-link">Contact via IRC</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#scoreboard"  class="nav-link">WeChall Scoreboard</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#safety"  class="nav-link">Safety Standards</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#staff"  class="nav-link">Staff</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#alumn"  class="nav-link">Alumni</a></li>
+            </ul>
+              
+            <div class="tab-content col-10 float-right">
+                <div id="donate" class="tab-pane fade show active">
+                    <h3>Donating</h3>
+                    <p>We gladly accept donations! We prefer receiving monthly donations via Patreon, since this allows us to give perks to sponsors. 
+                        However, PayPal donations are also an option.</p>
+                    <div class="donations-container">
+                        <a href="https://www.patreon.com/join/StevenVanAcker">
+                            <div class="donation patreon">
+                                <img src="src/patreon.png">
+                            </div>
+                        </a>
+                        <a href="https://paypal.me/overthewire">
+                            <div class="donation paypal">
+                                <img src="src/paypal.png">
+                            </div>
+                        </a>
+                    </div>
+                    <p>Please <a data-toggle="tab" href="#contact">contact us</a> if you want to donate in another way.</p>
+                    <h3>Huge Thanks to Our Patrons</h3>
+                    <ul style="list-style-type: none;">
+                        <li>Ariyan Suroosh</li>
+                        <li>Fionnbharr Davies</li>
+                        <li>Max G</li>
+                        <li>Calle “Zeta Two” Svensson</li>
+                        <li>cyberduck</li>
+                        <li>Pontus Nyberg</li>
+                        <li>Chuck</li>
+                        <li>hpmv</li>
+                        <li>Chris Gudn</li>
+                        <li>Christopher Greene</li>
+                        <li>AdamM</li>
+                        <li>mari0d</li>
+                        <li>Shawn Harmsen</li>
+                        <li>Kalle Vedin</li>
+                        <li>seph17</li>
+                    </ul>
+                </div>
+                <div id="contact" class="tab-pane fade">
+                    <h3>Contact via IRC</h3>
+                    <p>
+                            If you have a problem, a question, a suggestion, or just want to hang out with us, 
+                            you can join us on our IRC servers: If you don’t know <a href="https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial">how to use IRC</a>, use google to find out.
+                            <span style="font-weight: lighter;"><br><br>
+                                Encrypted IRC:<br>
+                                Host: ircs.overthewire.org<br>
+                                Port: 6697 (with SSL)<br><br>
+
+                            Non-encrypted IRC:<br>
+                                Host: irc.overthewire.org<br>
+                                Port: 6667<br><br>
+
+                            Channels:<br> 
+                                #wargames 	(for talk related to the games)<br>
+                                #warzone 	(for talk related to the warzone)<br>
+                                #social 	(for general talk)</span><br>
+                    </p>
+                    <h4>Web-based IRC client</h4>
+                    <p>
+                       If you don’t have access to an IRC client, you can use the web-based IRC client.<br><br>
+
+                        <b>Be aware that leaving this page will disconnect you from the chat!</b>
+                    </p>
+                    <iframe id="ircframe" src="https://kiwiirc.com/client/irc.overthewire.org/?nick=WebVisitor?&amp;theme=cli#wargames">
+                    </iframe>
+                </div>
+                <div id="scoreboard" class="tab-pane fade">
+                    <h3>WeChall Scoreboard</h3>
+                    <p>
+                        OverTheWire makes use of a scoreboard provided by WeChall to allow players to track their own progress and promote 
+                        some healthy competition between players. To make use of this scoreboard for OverTheWire games, you need to follow these 
+                        steps:
+                    </p>
+                    <p>
+                        1. First, go to <a href="https://www.wechall.net" target="_blank">WeChall</a> and register for an account.
+                    </p>
+                    <p>
+                       2. Next, log in and retrieve your WeChall token and username. 
+                       Your WeChall username is what you registered with, while your WeChall token can be found on the 
+                       WeChall website under <a href="https://www.wechall.net/warboxes" target="_blank">“Account” -> “WarBoxes”</a>. The token looks something like 
+                       “EDD76-1FC9F-7388B-DC6EB-E3F71-FC4CB”. 
+                    </p>
+                    <p>
+                        3. Next, assuming you are using the correct operating system, edit your ~/.bashrc file and add:<br><br>
+
+                        <span style="font-weight: lighter;">export WECHALLUSER="YourUserName"<br>
+                        export WECHALLTOKEN="YOUR-WECHALL-TOKEN-HERE"<br>
+                        For fish users, you may run:<br>
+
+                        set -Ux WECHALLUSER "YourUserName"</span><br><br>
+                        You may need to logout and login again for these changes to take effect. To test whether the environment variables are registered, type “echo $WECHALLUSER”, which should show that environment variable.
+                    </p>
+                    <p>
+                       4. Next, edit ~/.ssh/config (or create it if it doesn’t exist) and add:<br><br>
+
+                       <span style="font-weight: lighter;">Host *.labs.overthewire.org<br>
+                        SendEnv WECHALLTOKEN<br>
+                        SendEnv WECHALLUSER</span><br><br>
+                        This configures your SSH client to transmit both username and token to your remote session, so it can be used there. 
+                    </p>
+                    <p>
+                        5. Finally, you are able to easily register which levels you have beaten on OverTheWire by 
+                        logging in through SSH the normal way, and invoking the “wechall” command. This command will use 
+                        your WeChall username and WeChall token to register the level you have beaten with WeChall.
+                    </p>
+                </div>
+                <div id="safety" class="tab-pane fade">
+                    <h3>Safety on the Net</h3>
+                    <p>
+                        <span class="text-warning">This section is still under construcion.</span><br><br>
+                        Best practices are to always use a use a VM when interacting with an environment like the warzone and a VPN if possible.
+                        OTW is not responsible for any damages incured by other users.
+                    </p>
+                </div>
+                <div id="staff" class="tab-pane fade">
+                    <h3>Staff</h3>
+                    <p>
+                            The OverTheWire staff consists of volunteers that spend their spare time and money maintaining the infrastructure and creating new games.
+                            <ul style="list-style-type: none;">
+                                <li>Steven “Steven” Van Acker</li>
+                                <li>morla</li>
+                            </ul><br>
+                            If you need to, you may <a data-toggle="tab" href="#contact">contact us through IRC</a>.
+                    </p>
+                </div>
+                <div id="alumn" class="tab-pane fade">
+                    <h3>OTW Alumni</h3>
+                    <p>
+                            OverTheWire (formerly known as PullThePlug.org) has been staffed by many volunteers over the years. We appreciate all of them and their efforts.
+                            <ul style="list-style-type: none;">
+                                <li>Andrew “andrewg” Griffiths</li>
+                                <li>Daniel “arcanum” Alvarez</li>
+                                <li>“aton”</li>
+                                <li>Bob “bk” Krouse</li>
+                                <li>Brian “dies” G.</li>
+                                <li>Samy “Samy” Al Bahra</li>
+                                <li>Ken “misery” D.</li>
+                            </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+    
+
+</body>
+</html>

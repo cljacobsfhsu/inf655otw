@@ -20,26 +20,9 @@
         </script>
 
 
-        <title>notepad</title>
+        <title>HES2010</title>
 
     </head>
-
-    <style>
-            [contentEditable=true]:empty:not(:focus):before{
-                content:attr(data-text)
-            }
-    
-            .note {
-                width: 100%;
-                height: auto;
-                background-color: #eeeeee;
-            }
-
-            #save {
-                float: right;
-                margin-top: 1%;
-            }
-    </style>
 
 <body>
     <div id="wrapper" class="container">
@@ -52,22 +35,64 @@
 
 
     <main id="content">
+        <div class="col-12">
+            <h1>HES2010</h1>
+            <p>
+                This wargame was introduced at the Hackito Ergo Sum (HES) 2010 conference in Paris and is centered around the fictitious company dirty-underwear.com<br><br>
 
-        <div class="container mt-4">
-            <h2>Notepad</h2>
-            <p>Keep track of any flags, passwords, or other useful information here. Information is stored locally, so bear that in mind if
-                using multiple devives.
+                The winners of this wargame at HES2010 were CCCP and morla.<br><br>
+                    
+                As of January 2012, the HES2010 game has been released to the public and can be downloaded <a href="http://images.overthewire.org/HES2010 - OverTheWire Wargame.ova">here</a>.<br><br>
+                    
+                The wargame has its own local website on the virtual machine. Once the VM is running, you can find it at http://192.168.66.66<br><br>
             </p>
-            <div id="notes" class="col-md-12 sol-sm-12 note" contenteditable="true">
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
+
+            <div style="background-color: #555555; color: #eeeeee; padding: 1%; border-radius: 3px;">
+                <p>
+                   <h3>Introduction</h3>
+                   This wargame revolves around a company called Dirty-Underwear.com which buys and sells dirty 
+                    underwear. Your job, very simply, is to break into the server and beat all levels.
+                    Hint: the credentials for the first level can be found by going through the local 
+                    website. Think like Google! 
+                </p>
+                <p>
+                    <h3>How to Play?</h3>
+                    First, download the diskimage because it is intended to run locally.
+                    Import the diskimage into your favorite virtualization software. The game is based on Ubuntu, 
+                    so any virtual hardware supported by Ubuntu should be fine in your virtualization environment.<br><br>
+
+                    When booted, the VM configures its network interface with:<br><br>
+                    IP <span class="ip">192.168.66.66/24</span><br>
+                    gateway <span class="ip">192.168.66.254</span><br>
+                    DNS <span class="ip">server 8.8.8.8 (Google)</span><br><br>
+                    There is no need to give access to the internet to get this VM working.<br><br>
+
+                    You can use SSH to login to the VM. For maintenance reasons, there is an account 'otw' with 
+                    password 'otw' with sudo rights to get a root account. This maintenance account is not part of
+                    the wargame and should not be used when playing the wargame fairly.
+                </p>
+                <p>
+                    <h3>Contact Information</h3>
+                    For information regarding this wargame, find us at <span class="ur">http://www.overthewire.org</span> or through
+                    IRC on irc.overthewire.org, channel #social
+                    The OverTheWire community offers more wargames and resources for you to explore.
+                </p>
+                <p>
+                    <h3>History of This Wargame</h3>
+                    This wargame was reachable on <span class="ur">hes2010.labs.overthewire.org</span>.
+                    With the release of this diskimage, the DNS record has been updated to 
+                    point to <span class="ip">192.168.66.66</span>, which is the local IP address of this offline version of the game. 
+
+                    Originally, this wargame was created for the Hackito Ergo Sum 2010 conference in Paris,
+                    which was held in April of 2010. Afterwards, the wargame was opened up to any player.
+                </p>
+                <p>
+                    <h3>References</h3>
+                    <span class="ur">
+                        http://www.overthewire.org/<br>
+                        http://hackitoergosum.org/</span>
+                </p>
             </div>
-            <button id="save" class="btn btn-primary" type="button">Save Changes</button>
         </div>
     </main>
 
@@ -114,8 +139,6 @@
         if(!firebaseUser) {
             console.log('not logged in');
             $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
-            alert('Please log in to use this feature.');
-            window.location='login.html'
         }
     });
 
@@ -137,19 +160,6 @@
                 $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
               });
           });
-    </script>
-    <script>
-        var note = $('#notes');
-
-        $('#save').on('click', function(){
-            var editednotes   = note.html();
-            localStorage.newnotes = editednotes;
-          });
-
-          if(localStorage.getItem('newnotes')) {
-            note.html(localStorage.getItem('newnotes'));
-
-          }
     </script>
     
 

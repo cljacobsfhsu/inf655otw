@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--Hamburger Icon-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--Jquery ui CSS-->
+        <link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+        <!--My Css-->
+        <link type="text/css" rel="stylesheet" href="src/style.css">
+        <!--Include Script-->
+        <script src="scripts/includeHTML.js">
+        </script>
+
+
+        <title>Maze Game</title>
+
+    </head>
+
+    <style>
+        .nav-tabs .nav-link {
+            border: none;
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+    </style>
+
+
+<body>
+    <div id="wrapper" class="container">
+
+    <nav class="navbar navbar-expand-md justify-content-center navbar-inverse fixed-top row" include-html="templates/nav.html" data-toggle="sticky-onscroll">
+    </nav>
+
+    <header include-html="templates/header.html" class="row">
+    </header>
+
+
+    <main id="content">
+        <div>
+            <h2 id="maze">Maze</h2>
+            <div id="sshinfo">
+                    <p><b>SSH Information:</b><br>
+                    Host: maze.labs.overthewire.org<br>
+                    Port: 2225</p>
+            </div>
+            
+            <div class="col-12">
+                <p class="text-danger"><b>Can you find the way out?</b>
+                        </p></div>
+              
+            <ul class="nav nav-tabs col-2 float-left" style="display: block">
+                <li class="nav-item"><a data-toggle="tab" href="#gamestart"  class="nav-link active">Maze Instructions</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game0"  class="nav-link">Maze Level 0</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game1"  class="nav-link">Maze Level 1</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game2"  class="nav-link">Maze Level 2</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game3"  class="nav-link">Maze Level 3</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game4"  class="nav-link">Maze Level 4</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game5"  class="nav-link">Maze Level 5</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game6"  class="nav-link">Maze Level 6</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game7"  class="nav-link">Maze Level 7</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game8"  class="nav-link">Maze Level 8</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#game9"  class="nav-link">Maze Level 9</a></li>
+            </ul>
+              
+            <div class="tab-content col-10 float-right">
+                <div id="gamestart" class="tab-pane fade show active">
+                    <h3>Playing the Game</h3>
+                    <p>Maze is a wargame that has been rescued from the demise of <b>intruded.net</b>, previously hosted on Maze.intruded.net. <span class="text-info">Big thanks to adc, morla and reth</span> for their help in resurrecting this game!</p>
+                        <p>What follows below is the original description of Maze, copied from intruded.net:</p>
+                    <p style="font-weight: lighter;">
+                            Summary:<br>
+                            Difficulty: 5/10<br>
+                            Levels: 9<br>
+                            Platform: Linux/x86<br><br>
+                            
+                            Author: beng and capsyl<br><br>
+                            
+                            Special Thanks:<br>
+                            je for doing the primary beta-testing.
+                            kuba for beta-testing and ideas.
+                            psi for level9<br><br>
+                            
+                            Description:<br>
+                            You'll need knowledge of exploitation-techniques, programming (of course) and reverse-
+                            engineering. We've tried to make the levels tricky and some of them strange, so get ready
+                            to use gdb.
+                    </p> 
+                    <p>Maze’s levels are called maze0, maze1, … etc. and can be accessed on <b>maze.labs.overthewire.org</b> through SSH on port 2225.<br><br>
+                        To login to the first level use:<br><br>
+                        Username: maze0<br>
+                        Password: maze0<br><br>
+
+                        Data for the levels can be found in <b>/Maze/</b>.
+                    </p>
+                </div>
+                <div id="game0" class="tab-pane fade">
+                    <h3>Level 0</h3>
+                    <p>
+                        There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game1" class="tab-pane fade">
+                    <h3>Level 1</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game2" class="tab-pane fade">
+                    <h3>Level 2</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game3" class="tab-pane fade">
+                    <h3>Level 3</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game4" class="tab-pane fade">
+                    <h3>Level 4</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game5" class="tab-pane fade">
+                    <h3>Level 5</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game6" class="tab-pane fade">
+                    <h3>Level 6</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game7" class="tab-pane fade">
+                    <h3>Level 7</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game8" class="tab-pane fade">
+                    <h3>Level 8</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+                <div id="game9" class="tab-pane fade">
+                    <h3>Level 9</h3>
+                    <p>
+                            There is no information for this level, intentionally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="row container" include-html="templates/footer.html">
+    </footer>
+
+    </div>
+
+<!--Bootstrap Dependencies and Jquery-->
+<!--Jquery Stuff-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--Jquery UI-->
+<script src="js/jquery-ui/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+        includeHTML();
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCPfYgzHrAqpNhg4nHiuN5ewLpHbQaxj3w",
+      authDomain: "inf655-94bb8.firebaseapp.com",
+      databaseURL: "https://inf655-94bb8.firebaseio.com",
+      projectId: "inf655-94bb8",
+      storageBucket: "inf655-94bb8.appspot.com",
+      messagingSenderId: "262963091303"
+    };
+    firebase.initializeApp(config);
+
+    var auth=firebase.auth();
+
+    auth.onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser) {
+            console.log(firebaseUser);
+            user=firebaseUser;
+            $( ".sign" ).replaceWith('<li class="nav-item signout"><a class="nav-link" href="signout.html">Sign-Out</a></li>' );
+            
+        }
+
+        if(!firebaseUser) {
+            console.log('not logged in');
+            $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
+        }
+    });
+
+    $(document).on('click','.signout',function(event){
+        event.preventDefault();
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        location.reload();
+    });
+
+  </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+              });
+          });
+    </script>
+    
+    
+
+</body>
+</html>

@@ -20,26 +20,9 @@
         </script>
 
 
-        <title>notepad</title>
+        <title></title>
 
     </head>
-
-    <style>
-            [contentEditable=true]:empty:not(:focus):before{
-                content:attr(data-text)
-            }
-    
-            .note {
-                width: 100%;
-                height: auto;
-                background-color: #eeeeee;
-            }
-
-            #save {
-                float: right;
-                margin-top: 1%;
-            }
-    </style>
 
 <body>
     <div id="wrapper" class="container">
@@ -52,22 +35,26 @@
 
 
     <main id="content">
+        <div col-12>
+            <div class="row">
+                <h2 style="width: 100%;">PuTTY</h2>
+                <p>To engage in most wargames on this site you'll need some sort of SSH client. One of the most popular is <b>PuTTY</b>.</p>
+                <p>You can download PuTTY <a href="https://www.putty.org/" target="_blank">here</a> and find a tutorial for using the 
+                SSH functions on the <a href="https://www.ssh.com/ssh/putty/windows/" target="_blank">SSH Website</a></p>
+            </div><br>
 
-        <div class="container mt-4">
-            <h2>Notepad</h2>
-            <p>Keep track of any flags, passwords, or other useful information here. Information is stored locally, so bear that in mind if
-                using multiple devives.
-            </p>
-            <div id="notes" class="col-md-12 sol-sm-12 note" contenteditable="true">
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
+            <div class="row">
+                <h2>Virtual Machines</h2>
+                <p>
+                    Some games on this site require a VM (Virtual Machine) to play. A VM is an emulated computer system. Using a VM you can
+                    use operating systems other than your native one without the hassle of dual-booting. <a href="https://en.wikipedia.org/wiki/Virtual_machine" target="_blanks">Read more on VM's on Wikiepedia</a>.
+                </p>
+                <p>
+                    Many emulators are a paid product, however some are free and open source such as <a href="https://www.virtualbox.org/" target="_blank">VirtualBox by Oracle</a>. Organizations you are a part of 
+                    may provide with you other options such as VMware's <a href="https://www.vmware.com/products/workstation-pro.html" target="_blank">Workstation</a> or <a href="https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_fusion/11_0" target="_blank">Fusion</a>. 
+                    Ultimately these products work the same and choosing one will come down to your preference.
+                </p>
             </div>
-            <button id="save" class="btn btn-primary" type="button">Save Changes</button>
         </div>
     </main>
 
@@ -114,8 +101,6 @@
         if(!firebaseUser) {
             console.log('not logged in');
             $( ".sign" ).replaceWith('<li class="nav-item signin"><a class="nav-link" href="login.html">Sign-In</a></li>');
-            alert('Please log in to use this feature.');
-            window.location='login.html'
         }
     });
 
@@ -137,19 +122,6 @@
                 $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
               });
           });
-    </script>
-    <script>
-        var note = $('#notes');
-
-        $('#save').on('click', function(){
-            var editednotes   = note.html();
-            localStorage.newnotes = editednotes;
-          });
-
-          if(localStorage.getItem('newnotes')) {
-            note.html(localStorage.getItem('newnotes'));
-
-          }
     </script>
     
 
